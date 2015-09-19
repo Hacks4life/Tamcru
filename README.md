@@ -1,9 +1,9 @@
 # Tamcru
 Toms AntiVirus Multi Cleanup Repair Utility
 
-This tool is to make Peoples Lives a little Easier with Downloading and running Malware Scanners, Adware Scanners, 
-Spyware Scanners and more. This tool does the Following
-* Downloads And Runs the following scanners
+This tool is to make peoples lives a little easier with downloading and running Malware scanners, Adware scanners, 
+Spyware scanners and more. This tool does the following:
+* Downloads and runs the following scanners
       - AdwCleaner
       - RogueKiller
       - HitmanPro
@@ -11,10 +11,10 @@ Spyware Scanners and more. This tool does the Following
       - CrapKiller
       - TDSSKiller
       - CCleaner
-* Installs AntiViruses
-* Downloads and Runs AntiVirus Removal Tools
-* Runs Repair Scripts (E.g Windows Update Repairs)
-* Gives Information of the following
+* Downloads and installs antiviruses
+* Downloads and runs antivirus removal tools
+* Runs repair scripts (E.g Windows Update Repairs)
+* Gives information on the following
       - Trojans
       - Viruses
       - Adware  
@@ -22,6 +22,6 @@ Spyware Scanners and more. This tool does the Following
       - PUPs
       - Riskware
       - Spyware
-* Runs External Browser, For those times when peoples browsers are fully infected and unusable
-* Network Repairs 
+* Runs external browser, For those times when peoples browsers are fully infected and unusable
+* Network repairs 
 And More Coming Soon..
