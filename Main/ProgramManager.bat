@@ -18,7 +18,6 @@
 ::OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ::
 
-title *Tamcru* By: Tomas Pimentel (Hacks4life)
 ::------Create and switch to folder------
 md UniqueTempFolder
 cd UniqueTempFolder
