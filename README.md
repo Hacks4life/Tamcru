@@ -8,9 +8,12 @@ Spyware scanners and more. This tool does the following:
       - RogueKiller
       - HitmanPro
       - Spybot
+      - SuperAntiSpyware
       - CrapKiller
       - TDSSKiller
       - CCleaner
+      - MalwareBytes
+      - Autoruns
 * Downloads and installs antiviruses
 * Downloads and runs antivirus removal tools
 * Runs repair scripts (E.g Windows Update Repairs)
