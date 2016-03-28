@@ -1,5 +1,4 @@
-
--*@echo off
+@echo off
 Title *Toms Antivirus Multi Cleanup Repair Utility*
 :Ask
 RD /s /q UniqueTempFolder
