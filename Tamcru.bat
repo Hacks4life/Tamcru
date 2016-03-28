@@ -1,7 +1,6 @@
 @echo off
 Title *Toms Antivirus Multi Cleanup Repair Utility*
 :Ask
-RD /s /q UniqueTempFolder
 cls
 echo                   Toms AntiVirus Multi Cleanup Repair Utility
 echo [-----------------------------------------------------------------------------]
@@ -2163,8 +2162,16 @@ GOTO g
 ::------------------------Tron Script------------------------------------------------
 :s
 Cls
+echo %time% Check System For Tron Files
+IF EXIST "tron/Tron.bat" (
+Call "tron/Tron.bat"
+GOTO g
+) ELSE (
+echo %time% Please wait, This process may take up to 30mins
 echo %time% Downloading Tron Script
 call wget.exe -v --no-check-certificate --output-file=Download.log --input-file=Tron.download
+cls
+Echo %time% Extracting Tron Please wait
 Title Tamcru
 Call "Tron.exe"
 )
