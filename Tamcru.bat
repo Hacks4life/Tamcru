@@ -1,4 +1,5 @@
-@echo off
+
+-*@echo off
 Title *Toms Antivirus Multi Cleanup Repair Utility*
 :Ask
 RD /s /q UniqueTempFolder
@@ -39,67 +40,71 @@ cls
 md UniqueTempFolder
 cd UniqueTempFolder
 echo Please Wait Program Downloading Required Files
-echo [              ]
+echo [               ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ARP.exe', 'ARP.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [#             ]
+echo [#              ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/disable_telemetry_registry_entries.reg', 'disable_telemetry_registry_entries.reg')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [##            ]
+echo [##             ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DNSFlush.exe', 'DNSFlush.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [###           ]
+echo [###            ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/endsplash.exe', 'endsplash.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [####          ]
+echo [####           ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/InstallerServices.exe', 'InstallerServices.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [#####         ]
+echo [#####          ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/IPInfo.vbs', 'IPInfo.vbs')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [######        ]
+echo [######         ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Loading.vbs', 'Loading.vbs')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [#######       ]
+echo [#######        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ManualMalwareScan.exe', 'ManualMalwareScan.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [#######       ]
+echo [#######        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/purge_windows_10_telemetry.bat', 'purge_windows_10_telemetry.bat')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [########      ]
+echo [########       ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Safemode.exe', 'Safemode.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [#########     ]
+echo [#########      ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeDisabled.exe', 'SafemodeDisabled.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [##########    ]
+echo [##########     ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeEnabled.exe', 'SafemodeEnabled.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [###########   ]
+echo [###########    ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/TCPandIPReset.exe', 'TCPandIPReset.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [############  ]
+echo [############   ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/wget.exe', 'wget.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [############# ]
+echo [#############  ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/WinsockReset.exe', 'WinsockReset.exe')"
 cls
 echo Please Wait Program Downloading Required Files
-echo [##############]
+echo [############## ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Tron.download')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [###############]
 cls
 ::The MIT License (MIT)
 ::
@@ -2159,26 +2164,16 @@ GOTO g
 ::------------------------Tron Script------------------------------------------------
 :s
 Cls
-echo %time% Check System For Tron Files
-IF EXIST "C:/Program Files/Common Files/tron/Tron.bat" (
-Call "C:/Program Files/Common Files/tron/Tron.bat"
-GOTO g
-) ELSE (
 echo %time% Downloading Tron Script
 call wget.exe -v --no-check-certificate --output-file=Download.log --input-file=Tron.download
 Title Tamcru
-move /-y "Download.log" "C:/Program Files/Common Files/Tamcru/Main/Logs"
-move /-y "Tron.exe" "C:/Program Files/Common Files/Tamcru/Main/Tools"
-echo %time% Extracting Tron Files
-Call "C:/Program Files/Common Files/Tamcru/Main/Tools/Tron.exe"
-md "C:/Program Files/Common Files/tron
-move /-y "C:/Program Files/Common Files/Tamcru/Main/UniqueTempFolder/tron/"*.* "C:/Program Files/Common Files/Tron
+Call "Tron.exe"
 )
 echo %time% Starting Tron
-IF EXIST "C:/Program Files/Common Files/tron/Tron.bat" (
-start call "C:/Program Files/Common Files/tron/Tron.bat"
+IF EXIST "tron/Tron.bat" (
+start call "tron/Tron.bat"
 ) ELSE (
-start call "C:/Program Files/Common Files/tron/Tron.bat"
+start call "Tron.bat"
 )
 GOTO g
 ::-----------------------Tron Script End---------------------------------------------
