@@ -36,21 +36,70 @@ If /I "%INPUT%"=="N" goto no
 echo Incorrect input & goto Ask
 :yes
 cls
-echo Please Wait Updating Locations
-echo [#  ]
-rmdir "C:/Program Files/Common Files/Tamcru" /s /q 
+md UniqueTempFolder
+cd UniqueTempFolder
+echo Please Wait Program Downloading Required Files
+echo [              ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ARP.exe', 'ARP.exe')"
 cls
-echo Please Wait Updating Locations
-echo [## ]
-md "C:/Program Files/Common Files/Tamcru"
+echo Please Wait Program Downloading Required Files
+echo [#             ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/disable_telemetry_registry_entries.reg', 'disable_telemetry_registry_entries.reg')"
 cls
-echo Please Wait Updating Locations
-echo [###]
-md "C:/Program Files/Common Files/Tamcru/Main"
-md "C:/Program Files/Common Files/Tamcru/Main/Tools"
-md "C:/Program Files/Common Files/Tamcru/Main/Warnings"
-md "C:/Program Files/Common Files/Tamcru/Main/UniqueTempFolder"
-md "C:/Program Files/Common Files/Tamcru/Main/Logs"
+echo Please Wait Program Downloading Required Files
+echo [##            ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DNSFlush.exe', 'DNSFlush.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [###           ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/endsplash.exe', 'endsplash.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [####          ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/InstallerServices.exe', 'InstallerServices.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [#####         ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/IPInfo.vbs', 'IPInfo.vbs')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [######        ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Loading.vbs', 'Loading.vbs')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [#######       ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ManualMalwareScan.exe', 'ManualMalwareScan.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [#######       ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/purge_windows_10_telemetry.bat', 'purge_windows_10_telemetry.bat')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [########      ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Safemode.exe', 'Safemode.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [#########     ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeDisabled.exe', 'SafemodeDisabled.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [##########    ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeEnabled.exe', 'SafemodeEnabled.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [###########   ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/TCPandIPReset.exe', 'TCPandIPReset.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [############  ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/wget.exe', 'wget.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [############# ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/WinsockReset.exe', 'WinsockReset.exe')"
+cls
+echo Please Wait Program Downloading Required Files
+echo [##############]
 cls
 ::The MIT License (MIT)
 ::
@@ -65,8 +114,7 @@ cls
 
 title *Tamcru* By: Tomas Pimentel (Hacks4life)
 ::------Create and switch to folder------
-md UniqueTempFolder
-cd UniqueTempFolder
+
 
 
 
@@ -376,7 +424,7 @@ GOTO a
 ::------------------Windows 10 Telemetry Purge-----------------------------------
 :rd
 cls
-Call "C:/Program Files/Common Files/Tamcru/Main/Tools/purge_windows_10_telemetry.bat"
+Call "purge_windows_10_telemetry.bat"
 GOTO a
 
 
@@ -388,7 +436,7 @@ REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MSIServer" /VE /
 Cls 
 echo %time% Starting Windows Installer Services
 cls
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/InstallerServices.exe"
+Call "InstallerServices.exe"
 GOTO a
 ::-------------------------Installer Services safemode end--------------------------
 
@@ -397,7 +445,7 @@ GOTO a
 cls
 bcdedit /set {default} safeboot network
 cls
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/SafemodeEnabled.exe"
+Call "SafemodeEnabled.exe"
 shutdown /r /t 0
 GOTO a
 ::---------------------------------SafeMode Enable End------------------------------
@@ -407,7 +455,7 @@ GOTO a
 cls
 bcdedit /deletevalue {default} safeboot
 cls
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/SafemodeDisabled.exe"
+Call "SafemodeDisabled.exe"
 shutdown /r /t 0
 GOTO a
 ::------------------------------SafeMode Remove End---------------------------------
@@ -549,7 +597,7 @@ echo Incorrect input & goto b
 
 ::=================================IP Info==========================================
 :anra
-start "" /wait "C:/Program Files/Common Files/Tamcru/Main/Tools/IPInfo.vbs"
+start "" /wait "IPInfo.vbs"
 GOTO b
 
 ::-------------------------------IP Info End----------------------------------------
@@ -568,7 +616,7 @@ if exist %windir%\system32\shutdown.exe %windir%\system32\shutdown.exe /r
 echo err: failed to reset tcp/ip
 echo err: unable to locate %windir%\system32\netsh.exe
 )
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/TCPandIPReset.exe"
+Call "TCPandIPReset.exe"
 goto :b
  
 ::---------------------TCP/Ip Reset end----------------------------------------------
@@ -591,7 +639,7 @@ echo %p% & title %p% & echo %p% >>%userprofile%\desktop\netfix.log
 echo err: failed to renew IP address
 echo err: unable to locate %windir%\system32\ipconfig.exe
 )
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/WinsockReset.exe"
+Call "WinsockReset.exe"
 GOTO b
 
 ::----------------------Winsock Reset end---------------------------------------------
@@ -644,7 +692,7 @@ echo %p% & title %p% & echo %p% >>%userprofile%\desktop\netfix.log
 echo err: failed to renew IP address
 echo err: unable to locate %windir%\system32\ipconfig.exe
 )
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/ARP.exe"
+Call "ARP.exe"
 GOTO b
 
 ::------------------------Flush ARP cache End------------------------------------
@@ -684,7 +732,7 @@ echo %p% & title %p% & echo %p% >>%userprofile%\desktop\netfix.log
 echo err: failed to register DNS name
 echo err: unable to locate %windir%\system32\ipconfig.exe
 )
-Call "C:/Program Files/Common Files/Tamcru/Main/Warnings/DNSFlush.exe"
+Call "DNSFlush.exe"
 GOTO b
 
 ::----------------------------FLush DNS End---------------------------------------
@@ -1262,7 +1310,7 @@ GOTO c
 
 ::=============================== Removal Tools=====================================
 :d
-start "" "C:/Program Files/Common Files/Tamcru/Main/Warnings/Safemode.exe"
+start "" "Safemode.exe"
 :dm
 title *Tamcru* Removal Tools Menu
 cls
@@ -1558,7 +1606,7 @@ cls
 echo  ----------------------Exploit----------------------
 echo / Exploits are programs that contain data or code   \
 echo / that takes advantage of a vulnerability           \
-echo / within application software that’s                \
+echo / within application software thatâ€™s                \
 echo / running on your computer.                         \
 echo. --------------------------------------------------- 
 echo. 
@@ -1765,7 +1813,7 @@ pause
 cls
 echo  ------------------Trojan-Ransom--------------------
 echo / This type of Trojan can modify data on your       \
-echo / computer so that your computer doesn’t run        \
+echo / computer so that your computer doesnâ€™t run        \
 echo / correctly or you can no longer use specific data. \
 echo / the criminal will only restore your computer's    \
 echo / performance or unblock your data, after you have  \
@@ -1790,7 +1838,7 @@ echo _/_/_/      _/_/        _/    _/    _/_/_/    _/_/_/  _/    _/  _/_/_/
 pause
 cls
 echo  -------------------Trojan-Spy----------------------
-echo / Trojan-Spy programs can spy on how you’re using   \
+echo / Trojan-Spy programs can spy on how youâ€™re using   \
 echo / your computer for example, by tracking the data   \
 echo / you enter via your keyboard, taking screen shots, \
 echo / or getting a list of running applications         \
@@ -2177,7 +2225,7 @@ GOTO g
 :y
 cls
 echo %time% Running Manual Malware Scanner 
-Call "C:/Program Files/Common Files/Tamcru/Main/Tools/ManualMalwareScan.exe"
+Call "ManualMalwareScan.exe"
 GOTO g
 ::------------------------Manual Malware Scan End------------------------------------
 
