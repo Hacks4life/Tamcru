@@ -51,73 +51,73 @@ If /I "%INPUT%"=="N" goto no
 echo Incorrect input & goto Ask
 :yes
 cls
-md UniqueTempFolder
-cd UniqueTempFolder
-echo Please Wait Program Downloading Required Files
+md TamcruTemp
+cd TamcruTemp
+echo %time% Please Wait Program Downloading Required Files
 echo [               ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ARP.exe', 'ARP.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#              ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/disable_telemetry_registry_entries.reg', 'disable_telemetry_registry_entries.reg')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [##             ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DNSFlush.exe', 'DNSFlush.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [###            ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/endsplash.exe', 'endsplash.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [####           ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/InstallerServices.exe', 'InstallerServices.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#####          ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/IPInfo.vbs', 'IPInfo.vbs')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [######         ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Loading.vbs', 'Loading.vbs')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#######        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ManualMalwareScan.exe', 'ManualMalwareScan.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#######        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/purge_windows_10_telemetry.bat', 'purge_windows_10_telemetry.bat')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [########       ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Safemode.exe', 'Safemode.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#########      ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeDisabled.exe', 'SafemodeDisabled.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [##########     ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeEnabled.exe', 'SafemodeEnabled.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [###########    ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/TCPandIPReset.exe', 'TCPandIPReset.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [############   ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/wget.exe', 'wget.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [#############  ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/WinsockReset.exe', 'WinsockReset.exe')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [############## ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Tron.download')"
 cls
-echo Please Wait Program Downloading Required Files
+echo %time% Please Wait Program Downloading Required Files
 echo [###############]
 cls
 ::The MIT License (MIT)
@@ -163,7 +163,7 @@ echo *  Enter 3 For Anti-Virus Installation                                     
 echo *                                                                             *
 echo *  Enter 4 For Anti-Virus Removal Tools                                       *
 echo *                                                                             *
-echo *  Enter 5 for ------- (Still In Progress)                                    *
+echo *  Enter 5 for Features (Still In Progress)                                   *
 echo *                                                                             *
 echo *  Enter 6 for Information (Still In Progress)                                *
 echo *                                                                             *
@@ -208,16 +208,16 @@ echo *  Enter 3 For Reset Administrator Permissions (SubInACL)                  
 echo *                                                                             *
 echo *  Enter 4 for Purge Windows 10 Telemetry                                     *
 echo *                                                                             *
-echo *  Enter 5 for Start Installer Services In Safemode                           *
+echo *  Enter 5 for -=------                                                       *
 echo *                                                                             *
-echo *  Enter 6 for Enable Safemode W/Networking                                   *
+echo *  Enter 6 for --------                                                       *
 echo *                                                                             *
-echo *  Enter 7 for Disable Safemode W/Networking                                  *
+echo *  Enter 7 for --------                                                       *
 echo *                                                                             *
 echo *  Enter 8 To Go Back                                                         *
 echo *                                                                             *
 echo *  Enter 9 To End                                                             *
-echo *                                                    Enter 10 For Next Page > *
+echo *                                                     Enter 10 For Next Page  *
 echo *******************************************************************************
 :Ask
 set input=
@@ -447,37 +447,28 @@ Call "purge_windows_10_telemetry.bat"
 GOTO a
 
 
-::-------------------------Installer Services Safemode-----------------------------
+::-------------------------Repair ER-----------------------------
 :re
 cls
-echo %time% Starting Windows Installer Services
-REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MSIServer" /VE /T REG_SZ /F /D "Service"
-Cls 
-echo %time% Starting Windows Installer Services
-cls
-Call "InstallerServices.exe"
+echo Still in Progress
 GOTO a
-::-------------------------Installer Services safemode end--------------------------
+::-------------------------Repair RE End--------------------------
 
-::---------------------------------Safemode Enabled---------------------------------
+::---------------------------------Repair rf---------------------------------
 :rf
 cls
-bcdedit /set {default} safeboot network
-cls
-Call "SafemodeEnabled.exe"
-shutdown /r /t 0
+echo Still in Progress
+pause
 GOTO a
-::---------------------------------SafeMode Enable End------------------------------
+::--------------------------------- Repair Rf End------------------------------
 
-::---------------------------------SafeMode Remove----------------------------------
+::---------------------------------Repair RG Remove----------------------------------
 :rg
 cls
-bcdedit /deletevalue {default} safeboot
-cls
-Call "SafemodeDisabled.exe"
-shutdown /r /t 0
+echo Still in Progress
+pause
 GOTO a
-::------------------------------SafeMode Remove End---------------------------------
+::------------------------------Repair RG End---------------------------------
 
 ::Return---
 :rh
@@ -516,7 +507,7 @@ echo *                                                                          
 echo *  Enter 8 To Go Back                                                         *
 echo *                                                                             *
 echo *  Enter 9 To End                                                             *
-echo *                                                    Enter 10 For Next Page > *
+echo *                                                     Enter 10 For Next Page  *
 echo *******************************************************************************
 :Ask
 set input=
@@ -565,7 +556,7 @@ GOTO r2
 ::Return---
 :r2h
 cls
-GOTO %RETURN%
+GOTO a
 ::Return--end
 
 
@@ -1477,11 +1468,118 @@ GOTO dm
 
 ::=========================Removal Tools END===========================================
 
-::=============================Unknown=================================================
+::=============================Features=================================================
 :e
 cls 
+SET /P ".=******************************************************************> " <nul
+echo ^1.8>"VERSION"
+findstr /A:0D /S "1.8" "VERSION"
+SET /P ".=****************************> " <nul
+echo ^<*******************************>"Features Menu"
+findstr /A:02 /S "***************************" "Features Menu"
+echo *******************************************************************************
+echo *                                                                             *
+echo *  Enter 1 For Enable Safemode W/Networking                                   *
+echo *                                                                             *
+echo *  Enter 2 For Disable Safemode W/Networking                                  *
+echo *                                                                             *
+echo *  Enter 3 For Start Installer Services In Safemode                           *
+echo *                                                                             *
+echo *  Enter 4 For --------                                                       *
+echo *                                                                             *
+echo *  Enter 5 for --------                                                       *
+echo *                                                                             *
+echo *  Enter 6 for --------                                                       *
+echo *                                                                             *
+echo *  Enter 7 for --------                                                       *
+echo *                                                                             *
+echo *  Enter 8 To Go Back                                                         *
+echo *                                                                             *
+echo *  Enter 9 To End                                                             *
+echo *                                                                             *
+echo *******************************************************************************
+
+set input=
+set /p input= Enter Option %=%
+if %input%==1 goto fa
+if %input%==2 goto fb
+if %input%==3 goto fc
+if %input%==4 goto fd
+if %input%==5 goto fe
+if %input%==6 goto ff
+if %input%==7 goto fg
+if %input%==8 goto %RETURN%
+if %input%==9 goto x
+echo Incorrect input & goto e
 GOTO %RETURN%
-::===========================Unknown END===============================================
+
+::---------------------------------------
+:fa
+cls 
+bcdedit /set {default} safeboot network
+cls
+Call "SafemodeEnabled.exe"
+shutdown /r /t 0
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:fb
+cls 
+bcdedit /deletevalue {default} safeboot
+cls
+Call "SafemodeDisabled.exe"
+shutdown /r /t 0
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:fc
+cls 
+echo %time% Starting Windows Installer Services
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MSIServer" /VE /T REG_SZ /F /D "Service"
+Cls 
+echo %time% Starting Windows Installer Services
+cls
+Call "InstallerServices.exe"
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:fd
+cls 
+echo %time% Still In Progress
+Pause
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:fe
+cls 
+echo %time% Still In Progress
+Pause
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:ff
+cls 
+echo %time% Still In Progress
+Pause
+GOTO f
+::---------------------------------------
+
+::---------------------------------------
+:fg
+cls 
+echo %time% Still In Progress
+Pause
+GOTO f
+::---------------------------------------
+
+
+
+::===========================Features END===============================================
 
 :f
 title *Tamcru* Information Menu
@@ -1935,7 +2033,7 @@ echo *  Enter 3 For HitmanPro                      Enter 12 For SuperAntiSpyware
 echo *                                                                             *
 echo *  Enter 4 For CrapKiller                     Enter 13 For Tron Auto Script   *
 echo *                                                                             *
-echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Tron Removal       *
+echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Other Removal(N/A) *
 echo *                                                                             *
 echo *  Enter 6 for TDSSKiller                                                     *
 echo *                                                                             *
@@ -2200,44 +2298,24 @@ start call "Tron.bat"
 GOTO g
 ::-----------------------Tron Script End---------------------------------------------
 
-::------------------------Tron Removal-----------------------------------------------
+
+
+
+
+
+
+::------------------------Other Removal Tool-----------------------------------------------
 :sr
-cls
-Echo %Time% Finding Tron files
-IF EXIST "C:/Program Files/Common Files/tron" ( 
-GOTO sr1 
-) ELSE ( 
-GOTO sr2 
-)
-:sr1
-Echo %Time% Removing Tron files
-rd /S /Q "C:/Program Files/Common Files/tron"
-IF EXIST "C:/Program Files/Common Files/tron" (
-Echo %Time% Tron Removal Fail
-Echo %Time% Opening File Location For Manual Removal
-Start "" "C:/Program Files/Common Files"
-TIMEOUT /t 3
 GOTO g
-) ELSE (
-echo %Time% Tron Files Removed
-TIMEOUT /t 3
-GOTO g
-)
-:sr2
-Echo %Time% Removing Tron files
-rd /S /Q "C:\Program Files\Common Files\Tamcru\Main\UniqueTempFolder\tron"
-IF EXIST "C:\Program Files\Common Files\Tamcru\Main\UniqueTempFolder\tron" (
-Echo %Time% Tron Removal Fail
-Echo %Time% Opening File Location For Manual Removal
-Start "" "C:\Program Files\Common Files\Tamcru\Main\UniqueTempFolder"
-TIMEOUT /t 3
-GOTO g
-) ELSE (
-echo %Time% Tron Files Removed
-TIMEOUT /t 3
-GOTO g
-)
-::-----------------------Tron Removal End--------------------------------------------
+::-----------------------Other Removal Tool End--------------------------------------------
+
+
+
+
+
+
+
+
 ::-------------------------Manual Malware Scan---------------------------------------
 :y
 cls
@@ -2252,6 +2330,8 @@ GOTO g
 ::==================================END==============================================
 :x
 Cd ..
-RD /s /q UniqueTempFolder
+cls
+echo %time% Cleaning Up Tamcru Files
+RD /s /q TamcruTemp
 :no
 exit
