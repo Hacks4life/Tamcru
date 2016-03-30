@@ -248,7 +248,7 @@ GOTO a
 ------------------------------SFC Log-------------------------------------------
 :rb
 cls
-Running System File Scan
+Echo Running System File Scan
 sfc /scannow
 Pause
 echo 1 - Yes
