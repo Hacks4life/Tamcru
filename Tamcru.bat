@@ -200,15 +200,15 @@ echo ^<****************************>"Windows Repair Menu"
 findstr /A:02 /S "*************************" "Windows Repair Menu"
 echo *******************************************************************************
 echo *                                                                             *
-echo *  Enter 1 For Windows Update Full Reset                                      *
+echo *  Enter 1 For Chkdsk Scan (Fixes errors on the disk)                         *
 echo *                                                                             *
-echo *  Enter 2 For SFC Detail Log (/Desktop)                                      *
+echo *  Enter 2 For System File Scan /w Detailed CBS Report                        *
 echo *                                                                             *
 echo *  Enter 3 For Reset Administrator Permissions (SubInACL)                     *
 echo *                                                                             *
 echo *  Enter 4 for Purge Windows 10 Telemetry                                     *
 echo *                                                                             *
-echo *  Enter 5 for -=------                                                       *
+echo *  Enter 5 for Windows Update Full Reset                                      *
 echo *                                                                             *
 echo *  Enter 6 for --------                                                       *
 echo *                                                                             *
@@ -240,6 +240,70 @@ echo Incorrect input & goto a
 
 :ra
 cls
+Running Chkdsk Scan
+Chkdsk /f
+pause
+GOTO a
+
+------------------------------SFC Log-------------------------------------------
+:rb
+cls
+Running System File Scan
+sfc /scannow
+Pause
+echo 1 - Yes
+echo 2 - No
+set input=
+set /p input= Do you want a detailed Report? %=%
+if %input%==1 goto Detailed
+if %input%==2 goto a
+echo Incorrect input & goto a
+
+
+:Detailed
+echo %time% Please wait Grabbing cbs.log Info
+findstr /c:"[SR]" %windir%\Logs\CBS\CBS.log >"%userprofile%\Desktop\sfcdetails.txt"
+cls
+echo %time% Done.
+echo %time% A Detailed SFC log has been moved to your desktop
+start "" "%userprofile%\Desktop\sfcdetails.txt"
+timeout /t 3
+GOTO a
+-------------------------------SFC Log End--------------------------------------
+
+::----------------------Reset Administrator Permissions-------------------------
+:rc
+cls
+echo %time% Downloading Administrator Permissions (SubInACL)
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Tools/AdministratorPermissions.msi', 'AdministratorPermissions.msi')"
+cls
+echo %time% Running Administator Permissions (SubInACL) Setup
+call AdministratorPermissions.msi
+echo %time% Wait for installation to finish then
+pause
+cls
+
+subinacl /subkeyreg HKEY_LOCAL_MACHINE /grant=administrators=f  /grant=system=f
+
+subinacl /subkeyreg HKEY_CURRENT_USER /grant=administrators=f  /grant=system=f
+
+subinacl /subkeyreg HKEY_CLASSES_ROOT /grant=administrators=f  /grant=system=f
+
+subinacl /subdirectories %windir% /grant=administrators=f /grant=system=f
+
+echo %time% Done
+GOTO a
+::-----------------Reset Administrator Permissions End--------------------------
+
+::------------------Windows 10 Telemetry Purge-----------------------------------
+:rd
+cls
+Call "purge_windows_10_telemetry.bat"
+GOTO a
+
+
+::-------------------------updates ER-----------------------------
+:re
 echo %time% Please Wait
 net stop bits
 cls
@@ -402,65 +466,13 @@ bitsadmin.exe /reset /allusers
 echo %time% Done
 Pause
 GOTO a
+::-------------------------updates End--------------------------
 
-------------------------------SFC Log-------------------------------------------
-:rb
-cls
-echo %time% Please wait Grabbing cbs.log Info
-findstr /c:"[SR]" %windir%\Logs\CBS\CBS.log >"%userprofile%\Desktop\sfcdetails.txt"
-cls
-echo %time% Done.
-echo %time% A Detailed SFC log has been moved to your desktop
-start "" "%userprofile%\Desktop\sfcdetails.txt"
-timeout /t 3
-GOTO a
--------------------------------SFC Log End--------------------------------------
-
-::----------------------Reset Administrator Permissions-------------------------
-:rc
-cls
-echo %time% Downloading Administrator Permissions (SubInACL)
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Tools/AdministratorPermissions.msi', 'AdministratorPermissions.msi')"
-cls
-echo %time% Running Administator Permissions (SubInACL) Setup
-call AdministratorPermissions.msi
-echo %time% Wait for installation to finish then
-pause
-cls
-
-subinacl /subkeyreg HKEY_LOCAL_MACHINE /grant=administrators=f  /grant=system=f
-
-subinacl /subkeyreg HKEY_CURRENT_USER /grant=administrators=f  /grant=system=f
-
-subinacl /subkeyreg HKEY_CLASSES_ROOT /grant=administrators=f  /grant=system=f
-
-subinacl /subdirectories %windir% /grant=administrators=f /grant=system=f
-
-echo %time% Done
-GOTO a
-::-----------------Reset Administrator Permissions End--------------------------
-
-::------------------Windows 10 Telemetry Purge-----------------------------------
-:rd
-cls
-Call "purge_windows_10_telemetry.bat"
-GOTO a
-
-
-::-------------------------Repair ER-----------------------------
-:re
-cls
-echo Still in Progress
-GOTO a
-::-------------------------Repair RE End--------------------------
-
-::---------------------------------Repair rf---------------------------------
+::---------------------------------repair rf---------------------------------
 :rf
 cls
-echo Still in Progress
-pause
 GOTO a
-::--------------------------------- Repair Rf End------------------------------
+::--------------------------------- Repair End------------------------------
 
 ::---------------------------------Repair RG Remove----------------------------------
 :rg
