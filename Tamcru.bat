@@ -50,75 +50,80 @@ If /I "%INPUT%"=="Y" goto yes
 If /I "%INPUT%"=="N" goto no
 echo Incorrect input & goto Ask
 :yes
-cls
+Cls
 md TamcruTemp
 cd TamcruTemp
-echo %time% Please Wait Program Downloading Required Files
-echo [               ]
+echo %time% Please Wait Downloading Required Program Files
+echo [                ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ARP.exe', 'ARP.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#              ]
+echo [#               ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/disable_telemetry_registry_entries.reg', 'disable_telemetry_registry_entries.reg')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [##             ]
+echo [##              ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DNSFlush.exe', 'DNSFlush.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [###            ]
+echo [###             ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/endsplash.exe', 'endsplash.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [####           ]
+echo [####            ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/InstallerServices.exe', 'InstallerServices.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#####          ]
+echo [#####           ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/IPInfo.vbs', 'IPInfo.vbs')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [######         ]
+echo [######          ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Loading.vbs', 'Loading.vbs')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#######        ]
+echo [#######         ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ManualMalwareScan.exe', 'ManualMalwareScan.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#######        ]
+echo [#######         ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/purge_windows_10_telemetry.bat', 'purge_windows_10_telemetry.bat')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [########       ]
+echo [########        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Safemode.exe', 'Safemode.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#########      ]
+echo [#########       ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeDisabled.exe', 'SafemodeDisabled.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [##########     ]
+echo [##########      ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeEnabled.exe', 'SafemodeEnabled.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [###########    ]
+echo [###########     ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/TCPandIPReset.exe', 'TCPandIPReset.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [############   ]
+echo [############    ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/wget.exe', 'wget.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#############  ]
+echo [#############   ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/WinsockReset.exe', 'WinsockReset.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [############## ]
+echo [##############  ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Tron.download')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [###############]
+echo [############### ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ComIntRepair.exe', 'ComIntRepair.exe')"
+cls
+echo %time% Please Wait Program Downloading Required Files
+echo [################]
+
 cls
 ::The MIT License (MIT)
 ::
@@ -240,7 +245,7 @@ echo Incorrect input & goto a
 
 :ra
 cls
-Running Chkdsk Scan
+echo Running Chkdsk Scan
 Chkdsk /f
 pause
 GOTO a
@@ -248,6 +253,7 @@ GOTO a
 ------------------------------SFC Log-------------------------------------------
 :rb
 cls
+title *Tamcru* System Files Scan
 Echo Running System File Scan
 sfc /scannow
 Pause
@@ -585,7 +591,7 @@ echo ^<****************************>"Network Repair Menu"
 findstr /A:02 /S "****************************" "Network Repair Menu"
 echo *******************************************************************************
 echo *                                                                             *
-echo *  Enter 1 For IPConfig                                                       *
+echo *  Enter 1 For Complete Internet Repair                                       *
 echo *                                                                             *
 echo *  Enter 2 For TCP/IP Reset                                                   *
 echo *                                                                             *
@@ -1497,7 +1503,7 @@ echo *  Enter 2 For Disable Safemode W/Networking                               
 echo *                                                                             *
 echo *  Enter 3 For Start Installer Services In Safemode                           *
 echo *                                                                             *
-echo *  Enter 4 For --------                                                       *
+echo *  Enter 4 For Current IP Information                                         *
 echo *                                                                             *
 echo *  Enter 5 for --------                                                       *
 echo *                                                                             *
@@ -1560,8 +1566,7 @@ GOTO f
 ::---------------------------------------
 :fd
 cls 
-echo %time% Still In Progress
-Pause
+start "" /wait "IPInfo.vbs"
 GOTO f
 ::---------------------------------------
 
