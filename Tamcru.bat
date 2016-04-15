@@ -54,75 +54,84 @@ Cls
 md TamcruTemp
 cd TamcruTemp
 echo %time% Please Wait Downloading Required Program Files
-echo [                ]
+echo [                  ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ARP.exe', 'ARP.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#               ]
+echo [#                 ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/disable_telemetry_registry_entries.reg', 'disable_telemetry_registry_entries.reg')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [##              ]
+echo [##                ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DNSFlush.exe', 'DNSFlush.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [###             ]
+echo [###               ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/endsplash.exe', 'endsplash.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [####            ]
+echo [####              ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/InstallerServices.exe', 'InstallerServices.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#####           ]
+echo [#####             ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/IPInfo.vbs', 'IPInfo.vbs')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [######          ]
+echo [######            ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Loading.vbs', 'Loading.vbs')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#######         ]
+echo [#######           ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ManualMalwareScan.exe', 'ManualMalwareScan.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#######         ]
+echo [#######           ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/purge_windows_10_telemetry.bat', 'purge_windows_10_telemetry.bat')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [########        ]
+echo [########          ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Safemode.exe', 'Safemode.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#########       ]
+echo [#########         ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeDisabled.exe', 'SafemodeDisabled.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [##########      ]
+echo [##########        ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/SafemodeEnabled.exe', 'SafemodeEnabled.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [###########     ]
+echo [###########       ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/TCPandIPReset.exe', 'TCPandIPReset.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [############    ]
+echo [############      ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/wget.exe', 'wget.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [#############   ]
+echo [#############     ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/WinsockReset.exe', 'WinsockReset.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [##############  ]
+echo [##############    ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Tron.download')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [############### ]
+echo [###############   ]
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/ComIntRepair.exe', 'ComIntRepair.exe')"
 cls
 echo %time% Please Wait Program Downloading Required Files
-echo [################]
+echo [################  ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Defraggler.download')"
+cls
+echo %time% Please Wait Program Downloading Required Files
+echo [################# ]
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'DefragglerLang.download')"
+cls
+echo %time% Please Wait Program Downloading Required Files
+echo [##################]
+
 
 cls
 ::The MIT License (MIT)
@@ -2050,7 +2059,7 @@ echo *  Enter 3 For HitmanPro                      Enter 12 For SuperAntiSpyware
 echo *                                                                             *
 echo *  Enter 4 For CrapKiller                     Enter 13 For Tron Auto Script   *
 echo *                                                                             *
-echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Other Removal(N/A) *
+echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Disk Defrag        *
 echo *                                                                             *
 echo *  Enter 6 for TDSSKiller                                                     *
 echo *                                                                             *
@@ -2076,6 +2085,7 @@ if %input%==11 goto q
 if %input%==12 goto r
 if %input%==13 goto s
 if %input%==14 goto sr
+if %input%==15 goto t
 if %input%==18 goto y
 if %input%==8 goto %RETURN%
 if %input%==9 goto x
@@ -2323,13 +2333,32 @@ GOTO g
 
 ::------------------------Other Removal Tool-----------------------------------------------
 :sr
+echo %time% Downloading Defraggler Components
+call wget.exe -v --no-check-certificate --output-file=DefragglerDownload.log --input-file=Defraggler.download
+md lang
+cd lang
+call wget.exe -v --no-check-certificate --output-file=DefragglerDownload.log --input-file=DefragglerLang.download
+cd ..
+pause
+cls
+:CheckOS
+IF EXIST "%PROGRAMFILES(X86)%" (GOTO 64BIT) ELSE (GOTO 32BIT)
+
+:32BIT 
+echo %time% Running Defragger
+call Defragglerr.exe
+GOTO g
+:64BIT
+echo %time% Running Defragger
+call Defraggler64.exe
 GOTO g
 ::-----------------------Other Removal Tool End--------------------------------------------
+::-----------------------Other Removal Tool-------------------------------------------
+:t
+GOTO g
 
 
-
-
-
+::-----------------------Other Removal Tool End--------------------------------------------
 
 
 
