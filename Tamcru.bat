@@ -2061,7 +2061,7 @@ echo *  Enter 4 For CrapKiller                     Enter 13 For Tron Auto Script
 echo *                                                                             *
 echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Disk Defrag        *
 echo *                                                                             *
-echo *  Enter 6 for TDSSKiller                                                     *
+echo *  Enter 6 for TDSSKiller                     Enter 15 For Other Repair (N/a) *
 echo *                                                                             *
 echo *  Enter 7 for Uninstall/Startup Cleanup                                      *
 echo *                                                                             *
@@ -2331,10 +2331,12 @@ GOTO g
 
 
 
-::------------------------Other Removal Tool-----------------------------------------------
+::------------------------Defraggler -----------------------------------------------
 :t
+cls
 echo %time% Downloading Defraggler Components
 call wget.exe -v --no-check-certificate --output-file=DefragglerDownload.log --input-file=Defraggler.download
+Title Tamcru
 cls
 :CheckOS
 IF EXIST "%PROGRAMFILES(X86)%" (GOTO 64BIT) ELSE (GOTO 32BIT)
@@ -2347,9 +2349,10 @@ GOTO g
 echo %time% Running Defragger
 call Defraggler64.exe
 GOTO g
-::-----------------------Other Removal Tool End--------------------------------------------
+::-----------------------Defraggler End--------------------------------------------
+
 ::-----------------------Other Removal Tool-------------------------------------------
-:t
+:u
 GOTO g
 
 
