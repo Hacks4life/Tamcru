@@ -123,11 +123,11 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropbox
 cls
 echo %time% Please Wait Program Downloading Required Files
 echo [################  ]
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'Defraggler.download')"
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Defraggler.download', 'Defraggler.download')"
 cls
 echo %time% Please Wait Program Downloading Required Files
 echo [################# ]
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/Tron.download', 'DefragglerLang.download')"
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Repo/DefragglerLang.download', 'DefragglerLang.download')"
 cls
 echo %time% Please Wait Program Downloading Required Files
 echo [##################]
@@ -2084,8 +2084,8 @@ if %input%==10 goto p
 if %input%==11 goto q
 if %input%==12 goto r
 if %input%==13 goto s
-if %input%==14 goto sr
-if %input%==15 goto t
+if %input%==14 goto t
+if %input%==15 goto u
 if %input%==18 goto y
 if %input%==8 goto %RETURN%
 if %input%==9 goto x
@@ -2332,14 +2332,9 @@ GOTO g
 
 
 ::------------------------Other Removal Tool-----------------------------------------------
-:sr
+:t
 echo %time% Downloading Defraggler Components
 call wget.exe -v --no-check-certificate --output-file=DefragglerDownload.log --input-file=Defraggler.download
-md lang
-cd lang
-call wget.exe -v --no-check-certificate --output-file=DefragglerDownload.log --input-file=DefragglerLang.download
-cd ..
-pause
 cls
 :CheckOS
 IF EXIST "%PROGRAMFILES(X86)%" (GOTO 64BIT) ELSE (GOTO 32BIT)
