@@ -181,7 +181,7 @@ echo *  Enter 5 for Features (Still In Progress)                                
 echo *                                                                             *
 echo *  Enter 6 for Information (Still In Progress)                                *
 echo *                                                                             *
-echo *  Enter 7 for Virus/Malware/Adware Cleaners                                  *
+echo *  Enter 7 for Malware Tools and System Optimizers                            *
 echo *                                                                             *
 echo *  Enter 8 For External Browser                                               *
 echo *                                                                             *
@@ -2053,19 +2053,21 @@ echo ***************************************************************************
 echo *                                                                             *
 echo *  Enter 1 For AdwCleaner                     Enter 10 For Autorun Scanner    *
 echo *                                                                             *
-echo *  Enter 2 For RogueKiller                    Enter 11 For MalwareBytes       *
+echo *  Enter 2 For RogueKiller                    Enter 11 For SuperAntiSpyware   *
 echo *                                                                             *
-echo *  Enter 3 For HitmanPro                      Enter 12 For SuperAntiSpyware   *
+echo *  Enter 3 For HitmanPro                                                      *
 echo *                                                                             *
-echo *  Enter 4 For CrapKiller                     Enter 13 For Tron Auto Script   *
+SET /P ".=*  Enter 4 For Crapkiller                          > " <nul
+echo ^<           *>"Optimization"
+findstr /A:0A /S "         *" "Optimization"
 echo *                                                                             *
-echo *  Enter 5 for Spybot Search and Destroy      Enter 14 For Disk Defrag        *
+echo *  Enter 5 for Spybot Search and Destroy      Enter 12 For CCleaner           *
 echo *                                                                             *
-echo *  Enter 6 for TDSSKiller                     Enter 15 For Other Repair (N/a) *
+echo *  Enter 6 for TDSSKiller                     Enter 13 For Tron Auto Script   *
 echo *                                                                             *
-echo *  Enter 7 for Uninstall/Startup Cleanup                                      *
+echo *  Enter 7 for MalwareBytes                   Enter 14 For Disk Defrag        *
 echo *                                                                             *
-echo *  Enter 8 To Go Back                                                         *
+echo *  Enter 8 To Go Back                         Enter 15 For Other Repair (N/a) *
 echo *                                                                             *
 echo *  Enter 9 To End                             Enter 18 For Manual Malware Scan*
 echo *                                                                             *
@@ -2239,8 +2241,46 @@ GOTO g
 
 
 
-::-----------------------------------CCleaner--------------------------------------
+::-----------------------------------Malwarebytes--------------------------------------
 :o
+cls
+echo %time% Downloading Malwarebytes Anti-Malware.
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/MalwareBytes/mbam.exe', 'mbam.exe')"
+cls
+echo %time% Done :D
+echo %time% Running Malwarebytes Anti-Malware Setup.
+call mbam.exe
+GOTO g
+::--------------------------------Malwarebytes END---------------------------------------
+
+::------------------------------Auto Run Scanner-------------------------------------
+:p
+cls
+echo %time% Downloading Autorun Scanner.
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/Autoruns/autoruns.exe', 'autoruns.exe')"
+cls
+echo %time% Done :D
+echo %time% Running Autorun Scanner
+call autoruns.exe
+GOTO g
+::----------------------------Auto Run scanner end-----------------------------------
+
+::-----------------------------SuperAntiSpyware------------------------------------------
+
+:q
+cls
+
+echo %time% Downloading SuperAntiSpyware.
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/SuperAntiSpyware/SAS.EXE', 'SAS.EXE')"
+cls
+echo %time% Done :D
+echo %time% Running SuperAntiSpyware Setup.
+call SAS.EXE
+GOTO g
+::-----------------------------SuperAntiSpyware End--------------------------------------
+
+::---------------------------CCleaner----------------------------------------
+:r
 cls
 :CheckOS
 IF EXIST "%PROGRAMFILES(X86)%" (GOTO 64BIT) ELSE (GOTO 32BIT)
@@ -2261,44 +2301,7 @@ echo %time% Done :D
 echo %time% Running CCleaner
 call CCleaner64.exe
 GOTO g
-::--------------------------------CCleaner END---------------------------------------
-
-::------------------------------Auto Run Scanner-------------------------------------
-:p
-cls
-echo %time% Downloading Autorun Scanner.
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/Autoruns/autoruns.exe', 'autoruns.exe')"
-cls
-echo %time% Done :D
-echo %time% Running Autorun Scanner
-call autoruns.exe
-GOTO g
-::----------------------------Auto Run scanner end-----------------------------------
-
-::-----------------------------MalwareBytes------------------------------------------
-
-:q
-cls
-echo %time% Downloading Malwarebytes Anti-Malware.
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/MalwareBytes/mbam.exe', 'mbam.exe')"
-cls
-echo %time% Done :D
-echo %time% Running Malwarebytes Anti-Malware Setup.
-call mbam.exe
-GOTO g
-::-----------------------------MalwareBytes End--------------------------------------
-
-::---------------------------SuperAntiSpyware----------------------------------------
-:r
-cls
-echo %time% Downloading SuperAntiSpyware.
-powershell -Command "(New-Object Net.WebClient).DownloadFile('https://dl.dropboxusercontent.com/u/38784088/Malware_Removal/SuperAntiSpyware/SAS.EXE', 'SAS.EXE')"
-cls
-echo %time% Done :D
-echo %time% Running SuperAntiSpyware Setup.
-call SAS.EXE
-GOTO g
-::-------------------------SuperAntiSpyware End--------------------------------------
+::-------------------------CCleaner End--------------------------------------
 
 ::------------------------Tron Script------------------------------------------------
 :s
