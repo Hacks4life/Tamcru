@@ -1,21 +1,22 @@
 @echo off
 Title *Toms Antivirus Multi Cleanup Repair Utility*
-REM --> Check for permissions
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-REM --> If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
-echo Requesting administrative privileges...
-goto UACPrompt
-) else ( goto gotAdmin )
-:UACPrompt
-echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-"%temp%\getadmin.vbs"
-exit /B
-:gotAdmin
-if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
-pushd "%CD%"
-CD /D "%~dp0"
+setlocal ENABLEDELAYEDEXPANSION & set "_FilePath=%~1"
+  if NOT EXIST "!_FilePath!" (echo/Starting AdminElevation)
+  set "_FN=_%~ns1" & echo/%TEMP%| findstr /C:"(" >nul && (echo/ERROR: %%TEMP%% path can not contain parenthesis &pause &endlocal &fc;: 2>nul & goto:eof)
+  set _FN=%_FN:(=%
+  set _vbspath="%temp:~%\%_FN:)=%.vbs" & set "_batpath=%temp:~%\%_FN:)=%.bat"
+  >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+  if "%errorlevel%" NEQ "0" goto :_getElevation
+  (if exist %_vbspath% ( del %_vbspath% )) & (if exist %_batpath% ( del %_batpath% )) 
+  endlocal & CD /D "%~dp1" & ver >nul & goto:eof
+  :_getElevation
+  echo/Requesting elevation...
+  echo/Set UAC = CreateObject^("Shell.Application"^) > %_vbspath% || (echo/&echo/Unable to create %_vbspath% & endlocal &md; 2>nul &goto:eof) 
+  echo/UAC.ShellExecute "%_batpath%", "", "", "runas", 1 >> %_vbspath% & echo/wscript.Quit(1)>> %_vbspath%
+  echo/@%* > "%_batpath%" || (echo/&echo/Unable to create %_batpath% & endlocal &md; 2>nul &goto:eof)
+  echo/@if %%errorlevel%%==9009 (echo/Admin user could not read the batch file. If running from a mapped drive or UNC path, check if Admin user can read it.) ^& @if %%errorlevel%% NEQ 0 pause >> "%_batpath%"
+  %_vbspath% && (echo/&echo/Failed to run VBscript %_vbspath% &endlocal &md; 2>nul & goto:Ask)
+  echo/&echo/Elevation was requested on a new CMD window &endlocal &fc;: 2>nul & goto:Ask
 :Ask
 cls
 echo                   Toms AntiVirus Multi Cleanup Repair Utility
