@@ -1548,7 +1548,7 @@ bcdedit /set {default} safeboot network
 cls
 Call "SafemodeEnabled.exe"
 shutdown /r /t 0
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
@@ -1558,7 +1558,7 @@ bcdedit /deletevalue {default} safeboot
 cls
 Call "SafemodeDisabled.exe"
 shutdown /r /t 0
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
@@ -1570,14 +1570,14 @@ Cls
 echo %time% Starting Windows Installer Services
 cls
 Call "InstallerServices.exe"
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
 :fd
 cls 
 start "" /wait "IPInfo.vbs"
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
@@ -1585,7 +1585,7 @@ GOTO f
 cls 
 echo %time% Still In Progress
 Pause
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
@@ -1593,7 +1593,7 @@ GOTO f
 cls 
 echo %time% Still In Progress
 Pause
-GOTO f
+GOTO e
 ::---------------------------------------
 
 ::---------------------------------------
@@ -1601,7 +1601,7 @@ GOTO f
 cls 
 echo %time% Still In Progress
 Pause
-GOTO f
+GOTO e
 ::---------------------------------------
 
 
